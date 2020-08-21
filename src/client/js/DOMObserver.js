@@ -2,7 +2,6 @@ const getCallBack = (config) => {
   return function (mutations) {
     mutations.forEach(function (mutation) {
       if (mutation.type === "childList") {
-        console.log(mutation);
 
         mutation.addedNodes.forEach((node) => {
           if (node.nodeType === 1) {
@@ -12,7 +11,6 @@ const getCallBack = (config) => {
                 node[targetProperty] &&
                 node[targetProperty] === targetValue
               ) {
-                console.log("found " + targetProperty);
                 //entire component is loaded at this point
                 actionMethod(node);
               }

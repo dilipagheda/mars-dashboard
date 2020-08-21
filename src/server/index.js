@@ -26,7 +26,6 @@ app.get("/apod", async (req, res) => {
     let response = await fetch(
       `https://api.nasa.gov/planetary/apod?api_key=${process.env.API_KEY}&date=${dateParam}`
     );
-    console.log(`1 - ${response.status}`);
     if (response.status === 200) {
       let image = await response.json();
       res.send({ image });
@@ -34,13 +33,11 @@ app.get("/apod", async (req, res) => {
       let response = await fetch(
         `https://api.nasa.gov/planetary/apod?api_key=${process.env.API_KEY}&date=${yesterdayParam}`
       );
-      console.log(`2 - ${response.status}`);
       if (response.status === 200) {
         let image = await response.json();
         res.send({ image });
       } else {
         const errorResponse = await response.json();
-        console.log(errorResponse);
         res.status(400).json(errorResponse);
       }
     }
