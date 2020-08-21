@@ -1,103 +1,102 @@
 .mars-images-container {
-    height: 100vh;
-    .goback-button {
-        @media (min-width: 360px) {
-            display: flex;
-            justify-content: center;
-            margin-bottom:10px;
-        }        
-        @media (min-width: 1224px) {
-            display: block;
-            margin-left:20px;
-            margin-bottom:0px;
-        }           
+  height: 100vh;
+  .goback-button {
+    @media (min-width: 360px) {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
     }
-    .header {
-        text-align: center;
-        font-size: 40px;
+    @media (min-width: 1224px) {
+      display: block;
+      margin-left: 20px;
+      margin-bottom: 0px;
     }
-    .subheader {
-        text-align: center;
-        font-size:20px;
+  }
+  .header {
+    text-align: center;
+    font-size: 40px;
+  }
+  .subheader {
+    text-align: center;
+    font-size: 20px;
+  }
+  .rover-buttons {
+    margin-top: 10px;
+    text-align: center;
+    button {
+      background-color: lightgrey;
+      color: black;
+      padding: 5px 10px;
+      width: 150px;
+      margin-right: 10px;
     }
-    .rover-buttons {
-        margin-top:10px;
-        text-align: center;
-        button {
-            background-color: lightgrey;
-            color:black;
-            padding:5px 10px;
-            width:150px;
-            margin-right:10px;
-        }
-        button.active{
-            background-color: purple;
-            color:white;
-        }
+    button.active {
+      background-color: purple;
+      color: white;
     }
-    .rover-info {
-        margin-top: 20px;
+  }
+  .rover-info {
+    margin-top: 20px;
+    display: flex;
+    @media (min-width: 360px) {
+      flex-direction: column;
+      div:not(:last-child) {
+        margin-right: 0px;
+        padding-right: 0px;
+        border-right: none;
+      }
+      div {
         display: flex;
-        @media (min-width: 360px) {
-            flex-direction: column;
-            div:not(:last-child) {
-                margin-right:0px;
-                padding-right:0px;
-                border-right:none;
-            }            
-            div {
-                display:flex;
-                flex-direction: column;
-                font-size:12px;
-                margin-top:5px;
-            }
-        }        
-        @media (min-width: 1224px) {
-            flex-direction: row;
-            div:not(:last-child) {
-                margin-right:10px;
-                padding-right:10px;
-                border-right:2px solid black;
-            }            
-            div {
-                display: block;
-                font-size:16px;
-                margin-top:0px;
-            }
-        }         
-        justify-content: center;
+        flex-direction: column;
+        font-size: 12px;
+        margin-top: 5px;
+      }
+    }
+    @media (min-width: 1224px) {
+      flex-direction: row;
+      div:not(:last-child) {
+        margin-right: 10px;
+        padding-right: 10px;
+        border-right: 2px solid black;
+      }
+      div {
+        display: block;
+        font-size: 16px;
+        margin-top: 0px;
+      }
+    }
+    justify-content: center;
 
-        div {
-            .value {
-                background-color: grey;
-                padding:2px 10px;
-                border-radius: 5px;
-                color:white;
-            }
-        }
+    div {
+      .value {
+        background-color: grey;
+        padding: 2px 10px;
+        border-radius: 5px;
+        color: white;
+      }
     }
-    padding:20px;
-    .rover-images-grid {
-        display: grid;
-        @media (min-width: 360px) {
-            grid-gap: 50px 50px;
-            grid-template-columns: 1fr;
-        }        
-        @media (min-width: 1224px) {
-            grid-gap: 50px 50px;
-            grid-template-columns: 1fr 1fr 1fr;
-        }         
-        margin:50px 20px;
-        .rover-image-grid-item{
-            box-shadow: 10px 10px 5px #888888;
-            display:flex;
-            flex-direction: column;
-            justify-content: space-between;
-            .camera-name {
-                padding: 20px 5px;
-                text-align: center;
-                
-            }
-        }
+  }
+  padding: 20px;
+  .rover-images-grid {
+    display: grid;
+    @media (min-width: 360px) {
+      grid-gap: 50px 50px;
+      grid-template-columns: 1fr;
     }
+    @media (min-width: 1224px) {
+      grid-gap: 50px 50px;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    margin: 50px 20px;
+    .rover-image-grid-item {
+      box-shadow: 10px 10px 5px #888888;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .camera-name {
+        padding: 20px 5px;
+        text-align: center;
+      }
+    }
+  }
 }

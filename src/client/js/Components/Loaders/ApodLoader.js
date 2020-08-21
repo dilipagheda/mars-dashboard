@@ -1,7 +1,5 @@
-
 const ApodLoader = () => {
-
-    return `
+  return `
         <div class="apod-container">
             <div class="top">
                 <button class="goback-button">Back to Home</button>
@@ -14,7 +12,6 @@ const ApodLoader = () => {
             </div>
         </div>
     `;
-}
+};
 
-
-export default ApodLoader
+export default ApodLoader;

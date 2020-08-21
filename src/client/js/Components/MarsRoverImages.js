@@ -1,9 +1,9 @@
-
-import RoverButtons from './RoverButtons'
+import RoverButtons from "./RoverButtons";
 
 const renderItems = (photos) => {
-    return photos.map(photo => {
-        return `<div class="rover-image-grid-item">
+  return photos
+    .map((photo) => {
+      return `<div class="rover-image-grid-item">
             <div>
                 <img src="${photo.src}" alt="">
             </div>
@@ -11,14 +11,14 @@ const renderItems = (photos) => {
                 <span>${photo.camera}</span>
             </div>
         </div>
-        `
-    }).join('')
-}
+        `;
+    })
+    .join("");
+};
 
 const renderMarsRoverImages = (selectedRover) => {
-
-    return (photos,manifest) => {
-            return `
+  return (photos, manifest) => {
+    return `
                 <div class="mars-images-container">
                 <div class="goback-button">
                     <button>Go back to Home</button>
@@ -52,27 +52,25 @@ const renderMarsRoverImages = (selectedRover) => {
                 
             </div>
         `;
-    }
-}
+  };
+};
 
 const MarsRoverImages = async (props, updateStore) => {
+  let state = updateStore("marsroverimages");
+  const selectedRover = state.selectedRover;
 
-    let state = updateStore("marsroverimages");
-    const selectedRover = state.selectedRover
+  const response = await fetch(
+    `http://localhost:3000/photos?rover=${selectedRover}`
+  ).then((res) => res.json());
 
-    const response = await fetch(`http://localhost:3000/photos?rover=${selectedRover}`)
-                            .then(res => res.json())
+  state = updateStore("marsroverimages", {
+    data: response,
+  });
 
-    state = updateStore("marsroverimages", {
-        data: response
-    });
+  const photos = state.data.photos;
+  const manifest = state.data.manifest;
 
-    const photos = state.data.photos
-    const manifest = state.data.manifest
-    
-    return renderMarsRoverImages(selectedRover)(photos,manifest)
+  return renderMarsRoverImages(selectedRover)(photos, manifest);
+};
 
-}
-
-
-export default MarsRoverImages
+export default MarsRoverImages;

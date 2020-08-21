@@ -1,17 +1,17 @@
-import RoverButtons from '../RoverButtons'
+import RoverButtons from "../RoverButtons";
 
 const ShowLoader = (type) => {
-    const renderLoader = () => {
-        return `
+  const renderLoader = () => {
+    return `
         <div class="loader-container">
             <div class="loader" id="loader"></div>
         </div>
-        `
-    }
+        `;
+  };
 
-    if(type === 'apod') {
-        return () => {
-            return `
+  if (type === "apod") {
+    return () => {
+      return `
             <div class="apod-container">
                 <div class="top">
                     <button class="goback-button">Back to Home</button>
@@ -21,13 +21,11 @@ const ShowLoader = (type) => {
                 </div>
                 ${renderLoader()}
             </div>
-            `
-        }
-    }
-    else if(type === 'marsrover') 
-    {
-        return (selectedRover) => {
-            return `
+            `;
+    };
+  } else if (type === "marsrover") {
+    return (selectedRover) => {
+      return `
                 <div class="mars-images-container">
                     <div class="goback-button">
                         <button>Go back to Home</button>
@@ -42,8 +40,8 @@ const ShowLoader = (type) => {
                     </div>
                 </div>
         `;
-    }
-}
-}
+    };
+  }
+};
 
-export default ShowLoader
+export default ShowLoader;

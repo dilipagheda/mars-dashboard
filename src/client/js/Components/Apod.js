@@ -1,25 +1,24 @@
-
 const renderMedia = (state) => {
-    if(state.media_type === 'image') {
-        return `
+  if (state.media_type === "image") {
+    return `
          <div class='image-container'>
             <img src="${state.url}" alt="">
          </div>
-        `
-    }
-    if(state.media_type === 'video') {
-        return `
+        `;
+  }
+  if (state.media_type === "video") {
+    return `
             <div class='video-container'>
                 <iframe
                     src='${state.url}'>
                 </iframe>
             </div>
-        `
-    }
-}
+        `;
+  }
+};
 
 const renderApod = (state) => {
-    return `
+  return `
     <div class="apod-container">
         <div class="top">
             <button class="goback-button">Back to Home</button>
@@ -39,18 +38,16 @@ const renderApod = (state) => {
         </div>
     </div>
 `;
-}
-
+};
 
 const Apod = async (updateStore) => {
+  const { image } = await fetch(`http://localhost:3000/apod`).then((res) =>
+    res.json()
+  );
 
-    const {image} = await fetch(`http://localhost:3000/apod`)
-                        .then(res => res.json())
+  const state = updateStore("apod", image);
 
-    const state = updateStore("apod",image)
+  return renderApod(state);
+};
 
-    return renderApod(state)
-}
-
-
-export default Apod
+export default Apod;

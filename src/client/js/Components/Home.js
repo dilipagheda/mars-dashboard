@@ -1,6 +1,5 @@
-
 const Home = () => {
-    return `
+  return `
     <div class="wrapper">
         <div class="home-container">
             <h1 class="header-text">Let's explore space!</h1>
@@ -23,6 +22,6 @@ const Home = () => {
         </div>
     </div>
     `;
-}
+};
 
-export default Home
+export default Home;

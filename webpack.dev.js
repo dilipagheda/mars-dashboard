@@ -20,13 +20,13 @@ module.exports = {
         use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
-        test:/\.html$/,
+        test: /\.html$/,
         use: ["html-loader"],
       },
       {
         //IMAGE LOADER
         test: /\.(jpe?g|png|gif|svg)$/i,
-        use:["file-loader"]
+        use: ["file-loader"],
       },
     ],
   },
@@ -35,6 +35,6 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./src/client/views/index.html",
       filename: "./index.html",
-    })
+    }),
   ],
 };

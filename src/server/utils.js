@@ -1,8 +1,9 @@
-const transformPhotos = (photos) => photos.map(photo => {
+const transformPhotos = (photos) =>
+  photos.map((photo) => {
     return {
-        src: photo.img_src,
-        camera: photo.camera.full_name
-    }
-})
+      src: photo.img_src,
+      camera: photo.camera.full_name,
+    };
+  });
 
-module.exports = transformPhotos
+module.exports = transformPhotos;

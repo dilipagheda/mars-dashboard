@@ -23,13 +23,13 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
-        test:/\.html$/,
+        test: /\.html$/,
         use: ["html-loader"],
       },
       {
         //IMAGE LOADER
         test: /\.(jpe?g|png|gif|svg)$/i,
-        use:["file-loader"]
+        use: ["file-loader"],
       },
     ],
   },
@@ -39,6 +39,6 @@ module.exports = {
       template: "./src/client/views/index.html",
       filename: "./index.html",
     }),
-    new MiniCssExtractPlugin({ filename: "[name].[contentHash].css" })
+    new MiniCssExtractPlugin({ filename: "[name].[contentHash].css" }),
   ],
 };
