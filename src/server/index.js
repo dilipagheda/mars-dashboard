@@ -14,6 +14,8 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+app.use(express.static(path.resolve("../../dist")));
+
 app.get('/apod', async (req, res) => {
 
     const now = moment(new Date());
