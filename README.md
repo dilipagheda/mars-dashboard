@@ -11,6 +11,9 @@ The aim of this project is to create a Mars rover dashboard that consumes the NA
 - mutation observers
 - build React style SPA without using React framework !!!
 - reshaping, and accessing information from complex API responses using pure functions and iterating over.
+- recursion
+- pure functions
+- dynamic event listeners
 
 # How to run this project locally
 
