@@ -7,6 +7,7 @@ import { Map, fromJS } from "immutable";
 import registerObserver from "./DOMObserver";
 import getObserverConfig from "./Config";
 import NotFound from "./Components/NotFound";
+import Constants from "./Components/Constants";
 
 // select the target node
 const root = document.querySelector("#root");
@@ -29,7 +30,7 @@ function updateStore(key, value) {
 // a main App function which loads correct view based on the url's hash value
 export const App = async (props) => {
   const hash = window.location.hash;
-  if (hash === "" && window.location.pathname === "/") {
+  if (hash === "" && window.location.pathname === Constants.rootPath) {
     root.innerHTML = Home();
   } else if (hash === "#apod") {
     if (props && props.apodHtml) {

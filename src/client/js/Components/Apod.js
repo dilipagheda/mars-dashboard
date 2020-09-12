@@ -1,3 +1,5 @@
+import Constants from "./Constants";
+
 const renderMedia = (state) => {
   if (state.media_type === "image") {
     return `
@@ -41,7 +43,7 @@ const renderApod = (state) => {
 };
 
 const Apod = async (updateStore) => {
-  const { image } = await fetch(`http://localhost:3000/apod`).then((res) =>
+  const { image } = await fetch(`${Constants.baseApiUrl}apod`).then((res) =>
     res.json()
   );
 

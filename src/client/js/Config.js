@@ -1,4 +1,5 @@
 import registerObserver from "./DOMObserver";
+import Constants from "./Components/Constants";
 
 const getObserverConfig = (target) => {
   const observerConfig = [
@@ -31,7 +32,7 @@ const getObserverConfig = (target) => {
         const goBackButton = document.querySelector(".goback-button");
 
         goBackButton.addEventListener("click", async () => {
-          history.pushState({}, "", "/");
+          history.pushState({}, "", Constants.rootPath);
           const event = new Event("render");
           target.dispatchEvent(event);
         });
@@ -47,7 +48,7 @@ const getObserverConfig = (target) => {
         const goBackButton = document.querySelector(".goback-button");
 
         goBackButton.addEventListener("click", async () => {
-          history.pushState({}, "", "/");
+          history.pushState({}, "", Constants.rootPath);
           const event = new Event("render");
           target.dispatchEvent(event);
         });

@@ -1,4 +1,5 @@
 import RoverButtons from "./RoverButtons";
+import Constants from "./Constants";
 
 const renderItems = (photos) => {
   return photos
@@ -60,7 +61,7 @@ const MarsRoverImages = async (props, updateStore) => {
   const selectedRover = state.selectedRover;
 
   const response = await fetch(
-    `http://localhost:3000/photos?rover=${selectedRover}`
+    `${Constants.baseApiUrl}photos?rover=${selectedRover}`
   ).then((res) => res.json());
 
   state = updateStore("marsroverimages", {
