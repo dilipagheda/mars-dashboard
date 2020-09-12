@@ -8,7 +8,7 @@ const moment = require("moment");
 const transformPhotos = require("./utils");
 
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -83,6 +83,6 @@ app.get("/photos", async (req, res) => {
   }
 });
 
-app.listen(port, () =>
-  console.log(`Mars Dashboard App is listening on port ${port}!`)
+app.listen(PORT, () =>
+  console.log(`Mars Dashboard App is listening on port ${PORT}!`)
 );
