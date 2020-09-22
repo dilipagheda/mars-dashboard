@@ -1,0 +1,9 @@
+language: node_js
+
+services:
+  - docker
+
+before_install:
+  - docker build -t dilipagheda/mars-dashboard .
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push dilipagheda/mars-dashboard
