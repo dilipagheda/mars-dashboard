@@ -1,12 +1,21 @@
 language: node_js
 
+node_js:
+  - 13
+
 services:
   - docker
 
 install:
   - echo "nothing to install as we are using docker"
 
+before_script:
+  - echo "no tests"
+
 script:
+  - docker --version
   - docker build -t dilipagheda/mars-dashboard .
+
+after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push dilipagheda/mars-dashboard
