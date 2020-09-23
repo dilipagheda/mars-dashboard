@@ -3,6 +3,9 @@ language: node_js
 services:
   - docker
 
+install:
+  - echo "nothing to install as we are using docker"
+
 script:
   - docker build -t dilipagheda/mars-dashboard .
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
